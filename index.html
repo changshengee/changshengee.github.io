@@ -158,7 +158,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://47.100.166.125/2020/10/10/Kotlin/" data-id="ckg3d97hc0000zsqvgvp2gbku" class="article-share-link">Share</a>
+      <a data-url="http://47.100.166.125/2020/10/10/Kotlin/" data-id="ckg68wyfd00001gr44p7fghox" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/" rel="tag">Android</a></li></ul>
@@ -212,7 +212,7 @@ console.log(str.match(regex))</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://47.100.166.125/2020/10/09/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" data-id="ckg3d97hm0005zsqv6iw87qvb" class="article-share-link">Share</a>
+      <a data-url="http://47.100.166.125/2020/10/09/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" data-id="ckg68wyfn00051gr44o4kfmte" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li></ul>
@@ -259,7 +259,7 @@ console.log(str.match(regex))</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://47.100.166.125/2020/10/09/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B8%AD-heap-%E5%92%8C-stack-%E7%9A%84%E5%8C%BA%E5%88%AB/" data-id="ckg3d97hl0004zsqv92lj9svq" class="article-share-link">Share</a>
+      <a data-url="http://47.100.166.125/2020/10/09/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B8%AD-heap-%E5%92%8C-stack-%E7%9A%84%E5%8C%BA%E5%88%AB/" data-id="ckg68wyfm00041gr4dy9nbtwf" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" rel="tag">计算机基础</a></li></ul>
@@ -300,17 +300,21 @@ console.log(str.match(regex))</code></pre>
 <li>广播接收器</li>
 <li>内容提供程序</li>
 </ul>
-<h3 id="Activity"><a href="#Activity" class="headerlink" title="Activity"></a>Activity</h3><p>Activity是与用户交互的入口点。它表示拥有单个界面的屏幕。<br>声明 Activity，请打开清单文件，并添加 <activity> 元素作为 <application> 元素的子元素</p>
+<h3 id="Activity"><a href="#Activity" class="headerlink" title="Activity"></a>Activity</h3><p>一种可以包含用户界面的组件，用于和用户进行交互。</p>
+<p>声明 Activity，manifests，并添加 <activity> 元素作为 <application> 元素的子元素</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;manifest ... &gt;</span><br><span class="line">  &lt;application ... &gt;</span><br><span class="line">      &lt;activity android:name&#x3D;&quot;.ExampleActivity&quot; &#x2F;&gt;</span><br><span class="line">      ...</span><br><span class="line">  &lt;&#x2F;application ... &gt;</span><br><span class="line">  ...</span><br><span class="line">&lt;&#x2F;manifest &gt;</span><br></pre></td></tr></table></figure>
 
-<h3 id="声明-intent-过滤器"><a href="#声明-intent-过滤器" class="headerlink" title="声明 intent 过滤器"></a>声明 intent 过滤器</h3><p>借助intent，可以根据显式请求启动 Activity，还可以隐式请求启动 Activity。<br>使用此功能，您需要在 <activity> 元素中声明 <intent-filter> 属性。此元素的定义包括 <action> 元素，以及可选的 <category> 元素和/或 <data><br>元素。这些元素组合在一起，可以指定 Activity 能够响应的 intent 类型。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;activity android:name&#x3D;&quot;.ExampleActivity&quot; android:icon&#x3D;&quot;@drawable&#x2F;app_icon&quot;&gt;</span><br><span class="line">    &lt;intent-filter&gt;</span><br><span class="line">        &lt;action android:name&#x3D;&quot;android.intent.action.SEND&quot; &#x2F;&gt;</span><br><span class="line">        &lt;category android:name&#x3D;&quot;android.intent.category.DEFAULT&quot; &#x2F;&gt;</span><br><span class="line">        &lt;data android:mimeType&#x3D;&quot;text&#x2F;plain&quot; &#x2F;&gt;</span><br><span class="line">    &lt;&#x2F;intent-filter&gt;</span><br><span class="line">&lt;&#x2F;activity&gt;</span><br></pre></td></tr></table></figure>
-<p><action> 元素指定该 Activity 会发送数据。将 <category> 元素声明为 DEFAULT 可使 Activity 能够接收启动请求。<data> 元素指定此 Activity<br>可以发送的数据类型。</p>
+<p>所有的Activity都要在AndroidManifest.xml中进行注册才能生效。Activity的注册声明要放在<application>标签内，并通过<activity>标签来对Activity进行注册。</p>
+<p>还可以通过在<activity>标签的内部加入<intent-filter>标签来配置主Activity。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;manifest xmlns:android&#x3D;&quot;http:&#x2F;&#x2F;schemas.android.com&#x2F;apk&#x2F;res&#x2F;android&quot;</span><br><span class="line">          package&#x3D;&quot;com.example.activitytest&quot;&gt;</span><br><span class="line"></span><br><span class="line">    &lt;application …&gt;</span><br><span class="line">        &lt;activity android:name&#x3D;&quot;.FirstActivity&quot; android:label&#x3D;&quot;This is FirstActivity&quot;&gt;</span><br><span class="line">            &lt;intent-filter&gt;</span><br><span class="line">                &lt;action android:name&#x3D;&quot;android.intent.action.MAIN&quot; &#x2F;&gt;</span><br><span class="line">                &lt;category android:name&#x3D;&quot;android.intent.category.LAUNCHER&quot; &#x2F;&gt;</span><br><span class="line">            &lt;&#x2F;intent-filter&gt;</span><br><span class="line">        &lt;&#x2F;activity&gt;</span><br><span class="line">    &lt;&#x2F;application&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;manifest&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="声明-intent-过滤器"><a href="#声明-intent-过滤器" class="headerlink" title="声明 intent 过滤器"></a>声明 intent 过滤器</h4><p>借助intent，可以根据显式请求启动 Activity，还可以隐式请求启动 Activity。<br>使用此功能，您需要在 <activity> 元素中声明 <intent-filter> 属性。此元素的定义包括 <action> 元素，以及可选的 <category> 元素和/或 <data><br>元素。这些元素组合在一起，可以指定 Activity 能够响应的 intent 类型。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">    &lt;activity android:name&#x3D;&quot;.ExampleActivity&quot; android:icon&#x3D;&quot;@drawable&#x2F;app_icon&quot;&gt;</span><br><span class="line">        &lt;intent-filter&gt;</span><br><span class="line">            &lt;action android:name&#x3D;&quot;android.intent.action.SEND&quot; &#x2F;&gt;</span><br><span class="line">            &lt;category android:name&#x3D;&quot;android.intent.category.DEFAULT&quot; &#x2F;&gt;</span><br><span class="line">            &lt;data android:mimeType&#x3D;&quot;text&#x2F;plain&quot; &#x2F;&gt;</span><br><span class="line">        &lt;&#x2F;intent-filter&gt;</span><br><span class="line">    &lt;&#x2F;activity&gt;</span><br><span class="line"></span><br><span class="line">&lt;action&gt; 元素指定该 Activity 会发送数据。将 &lt;category&gt; 元素声明为 DEFAULT 可使 Activity 能够接收启动请求。&lt;data&gt; 元素指定此 Activity </span><br><span class="line">可以发送的数据类型。</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://47.100.166.125/2020/09/30/%E5%AE%89%E5%8D%93%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" data-id="ckg3d97hk0003zsqv7ag1bkxa" class="article-share-link">Share</a>
+      <a data-url="http://47.100.166.125/2020/09/30/%E5%AE%89%E5%8D%93%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" data-id="ckg68wyfl00031gr43ov4e4uv" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/" rel="tag">Android</a></li></ul>
@@ -395,7 +399,7 @@ console.log(str.match(regex))</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://47.100.166.125/2020/09/29/mongo/" data-id="ckg3d97hh0001zsqvdf189c47" class="article-share-link">Share</a>
+      <a data-url="http://47.100.166.125/2020/09/29/mongo/" data-id="ckg68wyfi00011gr48sdfcbf6" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a></li></ul>
