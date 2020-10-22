@@ -1,7 +1,9 @@
 ---
 title: Kotlin
 date: 2020-10-10 14:58:17
-tags: Android
+categories:
+- Android
+tags: android,kotlin
 ---
 
 ## 函数
