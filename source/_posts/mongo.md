@@ -2,6 +2,7 @@
 title: mongo笔记
 date: 2020-09-29 17:01:43
 categories: 数据库
+tags: mongo
 ---
 ## 数据备份
 mongodump /h 10.1.56.74 /port 27017   /d JHQDB /o ./

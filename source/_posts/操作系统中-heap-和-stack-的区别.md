@@ -2,6 +2,8 @@
 title: 操作系统中 heap 和 stack 的区别
 date: 2020-10-09 09:47:28
 categories: 计算机基础
+tags: 
+- 堆栈
 ---
 
 ## 基本概念
