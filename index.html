@@ -64,6 +64,64 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Hystrix-服务容错保护" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/10/22/Hystrix-%E6%9C%8D%E5%8A%A1%E5%AE%B9%E9%94%99%E4%BF%9D%E6%8A%A4/" class="article-date">
+  <time datetime="2020-10-22T05:28:30.000Z" itemprop="datePublished">2020-10-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Java/">Java</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/10/22/Hystrix-%E6%9C%8D%E5%8A%A1%E5%AE%B9%E9%94%99%E4%BF%9D%E6%8A%A4/">hystrix 服务容错保护</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Spring Cloud Hystrix 是Spring Cloud Netflix 子项目的核心组件之一，具有服务容错及线程隔离等一系列服务保护功能。</p>
+<p>在微服务架构中，服务与服务之间通过远程调用的方式进行通信，一旦某个被调用的服务发生了故障，其依赖服务也会发生故障，此时就会发生故障的蔓延，最终导致系统<br>瘫痪。Hystrix实现了断路器模式，当某个服务发生故障时，通过断路器的监控，给调用方返回一个错误响应，而不是长时间的等待，这样就不会使得调用方由于长时间得<br>不到响应而占用线程，从而防止故障的蔓延。Hystrix具备服务降级、服务熔断、线程隔离、请求缓存、请求合并及服务监控等强大功能。</p>
+<h2 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.cloud&lt;&#x2F;groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-cloud-starter-netflix-eureka-client&lt;&#x2F;artifactId&gt;</span><br><span class="line">&lt;&#x2F;dependency&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.cloud&lt;&#x2F;groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-cloud-starter-netflix-hystrix&lt;&#x2F;artifactId&gt;</span><br><span class="line">&lt;&#x2F;dependency&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.boot&lt;&#x2F;groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-boot-starter-web&lt;&#x2F;artifactId&gt;</span><br><span class="line">&lt;&#x2F;dependency&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="yml配置"><a href="#yml配置" class="headerlink" title="yml配置"></a>yml配置</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">server:</span><br><span class="line">  port: 8401</span><br><span class="line">spring:</span><br><span class="line">  application:</span><br><span class="line">    name: hystrix-service</span><br><span class="line">eureka:</span><br><span class="line">  client:</span><br><span class="line">    register-with-eureka: true</span><br><span class="line">    fetch-registry: true</span><br><span class="line">    service-url:</span><br><span class="line">      defaultZone: http:&#x2F;&#x2F;localhost:8001&#x2F;eureka&#x2F;</span><br><span class="line">service-url:</span><br><span class="line">  user-service: http:&#x2F;&#x2F;user-service</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="启动类上添加-EnableCircuitBreaker来开启Hystrix的断路器功能"><a href="#启动类上添加-EnableCircuitBreaker来开启Hystrix的断路器功能" class="headerlink" title="启动类上添加@EnableCircuitBreaker来开启Hystrix的断路器功能"></a>启动类上添加@EnableCircuitBreaker来开启Hystrix的断路器功能</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@EnableCircuitBreaker</span><br><span class="line">@EnableDiscoveryClient</span><br><span class="line">@SpringBootApplication</span><br><span class="line">public class HystrixServiceApplication &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        SpringApplication.run(HystrixServiceApplication.class, args);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><p>@HystrixCommand中的常用参数</p>
+<p>fallbackMethod：指定服务降级处理方法；<br>ignoreExceptions：忽略某些异常，不发生服务降级；<br>commandKey：命令名称，用于区分不同的命令；<br>groupKey：分组名称，Hystrix会根据不同的分组来统计命令的告警及仪表盘信息；<br>threadPoolKey：线程池名称，用于划分线程池。</p>
+<h3 id="服务降级"><a href="#服务降级" class="headerlink" title="服务降级"></a>服务降级</h3><p>方法上添加次注解</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@HystrixCommand(fallbackMethod &#x3D; &quot;getDefaultUser&quot;)</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="异常忽略"><a href="#异常忽略" class="headerlink" title="异常忽略"></a>异常忽略</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@HystrixCommand(fallbackMethod &#x3D; &quot;getDefaultUser2&quot;, ignoreExceptions &#x3D; &#123;NullPointerException.class&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="请求缓存"><a href="#请求缓存" class="headerlink" title="请求缓存"></a>请求缓存</h3>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://47.100.166.125/2020/10/22/Hystrix-%E6%9C%8D%E5%8A%A1%E5%AE%B9%E9%94%99%E4%BF%9D%E6%8A%A4/" data-id="ckgkf5dvy0000zdtn7qa6eyu0" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hystrix/" rel="tag">hystrix</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spring-cloud/" rel="tag">spring cloud</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Kotlin" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/10/10/Kotlin/" class="article-date">
@@ -162,10 +220,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://47.100.166.125/2020/10/10/Kotlin/" data-id="ckgke4ayg00000kv507hff2q3" class="article-share-link">Share</a>
+      <a data-url="http://47.100.166.125/2020/10/10/Kotlin/" data-id="ckgkf5dw30001zdtnbsxeh2gp" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android-kotlin/" rel="tag">android,kotlin</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/" rel="tag">android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/kotlin/" rel="tag">kotlin</a></li></ul>
 
     </footer>
   </div>
@@ -220,9 +278,11 @@ console.log(str.match(regex))</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://47.100.166.125/2020/10/09/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" data-id="ckgke4ayw00060kv5dvv95vzg" class="article-share-link">Share</a>
+      <a data-url="http://47.100.166.125/2020/10/09/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" data-id="ckgkf5dwa0009zdtn1zw6dnow" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%AD%A3%E5%88%99/" rel="tag">正则</a></li></ul>
+
     </footer>
   </div>
   
@@ -269,9 +329,11 @@ console.log(str.match(regex))</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://47.100.166.125/2020/10/09/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B8%AD-heap-%E5%92%8C-stack-%E7%9A%84%E5%8C%BA%E5%88%AB/" data-id="ckgke4ayv00050kv5gqu37kop" class="article-share-link">Share</a>
+      <a data-url="http://47.100.166.125/2020/10/09/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B8%AD-heap-%E5%92%8C-stack-%E7%9A%84%E5%8C%BA%E5%88%AB/" data-id="ckgkf5dw90006zdtn4hvc4q79" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%A0%86%E6%A0%88/" rel="tag">堆栈</a></li></ul>
+
     </footer>
   </div>
   
@@ -326,9 +388,11 @@ console.log(str.match(regex))</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://47.100.166.125/2020/09/30/%E5%AE%89%E5%8D%93%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" data-id="ckgke4ayt00040kv54nrk2cp0" class="article-share-link">Share</a>
+      <a data-url="http://47.100.166.125/2020/09/30/%E5%AE%89%E5%8D%93%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" data-id="ckgkf5dw70005zdtn7pmih8yn" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/" rel="tag">android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/kotlin/" rel="tag">kotlin</a></li></ul>
+
     </footer>
   </div>
   
@@ -413,9 +477,11 @@ console.log(str.match(regex))</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://47.100.166.125/2020/09/29/mongo/" data-id="ckgke4ayn00010kv535pa5y1n" class="article-share-link">Share</a>
+      <a data-url="http://47.100.166.125/2020/09/29/mongo/" data-id="ckgkf5dw60004zdtn7ova40f7" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mongo/" rel="tag">mongo</a></li></ul>
+
     </footer>
   </div>
   
@@ -433,7 +499,7 @@ console.log(str.match(regex))</code></pre>
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/">Javascript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/">Javascript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a></li></ul>
     </div>
   </div>
 
@@ -443,7 +509,7 @@ console.log(str.match(regex))</code></pre>
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/android-kotlin/" rel="tag">android,kotlin</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/android/" rel="tag">android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hystrix/" rel="tag">hystrix</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kotlin/" rel="tag">kotlin</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mongo/" rel="tag">mongo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring-cloud/" rel="tag">spring cloud</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A0%86%E6%A0%88/" rel="tag">堆栈</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AD%A3%E5%88%99/" rel="tag">正则</a></li></ul>
     </div>
   </div>
 
@@ -453,7 +519,7 @@ console.log(str.match(regex))</code></pre>
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/android-kotlin/" style="font-size: 10px;">android,kotlin</a>
+      <a href="/tags/android/" style="font-size: 20px;">android</a> <a href="/tags/hystrix/" style="font-size: 10px;">hystrix</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/kotlin/" style="font-size: 20px;">kotlin</a> <a href="/tags/mongo/" style="font-size: 10px;">mongo</a> <a href="/tags/spring-cloud/" style="font-size: 10px;">spring cloud</a> <a href="/tags/%E5%A0%86%E6%A0%88/" style="font-size: 10px;">堆栈</a> <a href="/tags/%E6%AD%A3%E5%88%99/" style="font-size: 10px;">正则</a>
     </div>
   </div>
 
@@ -475,6 +541,10 @@ console.log(str.match(regex))</code></pre>
       <ul>
         
           <li>
+            <a href="/2020/10/22/Hystrix-%E6%9C%8D%E5%8A%A1%E5%AE%B9%E9%94%99%E4%BF%9D%E6%8A%A4/">hystrix 服务容错保护</a>
+          </li>
+        
+          <li>
             <a href="/2020/10/10/Kotlin/">Kotlin</a>
           </li>
         
@@ -488,10 +558,6 @@ console.log(str.match(regex))</code></pre>
         
           <li>
             <a href="/2020/09/30/%E5%AE%89%E5%8D%93%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">安卓基础知识</a>
-          </li>
-        
-          <li>
-            <a href="/2020/09/29/mongo/">mongo笔记</a>
           </li>
         
       </ul>
