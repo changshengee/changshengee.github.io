@@ -84,7 +84,6 @@ threadPoolKey：线程池名称，用于划分线程池。
 @HystrixCommand(fallbackMethod = "getDefaultUser")
 ```
 
-
 ### 异常忽略
 
 ```
@@ -92,3 +91,47 @@ threadPoolKey：线程池名称，用于划分线程池。
 ```
 
 ### 请求缓存
+
+当系统并发量越来越大时，我们需要使用缓存来优化系统，达到减轻并发请求线程数，提供响应速度的效果。
+
+#### 相关注解
+
+- @CacheResult：开启缓存，默认所有参数作为缓存的key，cacheKeyMethod可以通过返回String类型的方法指定key；
+- @CacheKey：指定缓存的key，可以指定参数或指定参数中的属性值为缓存key，cacheKeyMethod还可以通过返回String类型的方法指定；
+- @CacheRemove：移除缓存，需要指定commandKey。
+
+#### 在缓存使用过程中，我们需要在每次使用缓存的请求前后对HystrixRequestContext进行初始化和关闭
+
+Request caching is not available. Maybe you need to initialize the HystrixRequestContext?
+
+使用过滤器解决
+
+```
+@Component
+@WebFilter(urlPatterns = "/*", asyncSupported = true)
+public class HystrixRequestContextFilter implements Filter {
+    public static final Logger LOGGER = LoggerFactory.getLogger(HystrixRequestContextFilter.class);
+
+    @Override
+    public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
+        try (HystrixRequestContext context = HystrixRequestContext.initializeContext()) {
+            filterChain.doFilter(servletRequest, servletResponse);
+        } catch (ServletException e) {
+            LOGGER.error("filter-error",e);
+        }
+    }
+}
+```
+
+### 请求合并
+
+微服务系统中的服务间通信，需要通过远程调用来实现，随着调用次数越来越多，占用线程资源也会越来越多。Hystrix中提供了@HystrixCollapser用于合并请求，
+从而达到减少通信消耗及线程数量的效果。
+
+#### 常用属性
+
+- batchMethod：用于设置请求合并的方法；
+- collapserProperties：请求合并属性，用于控制实例属性，有很多；
+- timerDelayInMilliseconds：collapserProperties中的属性，用于控制每隔多少时间合并一次请求；
+
+
