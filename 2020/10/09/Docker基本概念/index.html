@@ -5,19 +5,19 @@
   
 
   
-  <title>正则表达式 | cs</title>
+  <title>Docker基本概念 | cs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="匹配模式 横向膜或匹配   可匹配字符串长度不固定  使用量词{m,n}：表示连续出现至少m次，至多n次  例：&#x2F;ab{2,5}c&#x2F;:表示第一个字符是a，接下来是2~5个字符b，最后是字符c   1234&#x2F;&#x2F;g 表示全局匹配const regex&#x3D;&#x2F;ab&amp;#123;2,5&amp;#125;c&#x2F;g;const str&#x3D;&quot;abc abbc abbbc abbbbc abbbbbc abbbbbbc">
+  <meta name="description" content="镜像操作系统分内核空间和用户空间，对于 Linux 而言，内核启动后，会挂载 root 文件系统为其提供用户空间支持。而 Docker 镜像（Image），就相当于是一个root 文件系统。 Docker 镜像是一个特殊的文件系统，除了提供容器运行时所需的程序、库、资源、配置等文件外，还包含了一些为运行时准备的一些配置参数（如匿名卷、环境变量、用户等）。镜像不包含任何动态数据，其内容在构建之后也不">
 <meta property="og:type" content="article">
-<meta property="og:title" content="正则表达式">
-<meta property="og:url" content="http://47.100.166.125/2020/10/09/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/index.html">
+<meta property="og:title" content="Docker基本概念">
+<meta property="og:url" content="http://47.100.166.125/2020/10/09/Docker%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/index.html">
 <meta property="og:site_name" content="cs">
-<meta property="og:description" content="匹配模式 横向膜或匹配   可匹配字符串长度不固定  使用量词{m,n}：表示连续出现至少m次，至多n次  例：&#x2F;ab{2,5}c&#x2F;:表示第一个字符是a，接下来是2~5个字符b，最后是字符c   1234&#x2F;&#x2F;g 表示全局匹配const regex&#x3D;&#x2F;ab&amp;#123;2,5&amp;#125;c&#x2F;g;const str&#x3D;&quot;abc abbc abbbc abbbbc abbbbbc abbbbbbc">
+<meta property="og:description" content="镜像操作系统分内核空间和用户空间，对于 Linux 而言，内核启动后，会挂载 root 文件系统为其提供用户空间支持。而 Docker 镜像（Image），就相当于是一个root 文件系统。 Docker 镜像是一个特殊的文件系统，除了提供容器运行时所需的程序、库、资源、配置等文件外，还包含了一些为运行时准备的一些配置参数（如匿名卷、环境变量、用户等）。镜像不包含任何动态数据，其内容在构建之后也不">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-10-09T06:46:02.000Z">
 <meta property="article:modified_time" content="2020-11-23T09:01:00.833Z">
 <meta property="article:author" content="ChangSheng">
-<meta property="article:tag" content="正则">
+<meta property="article:tag" content="docker">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="cs" type="application/atom+xml">
@@ -67,14 +67,14 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-正则表达式" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Docker基本概念" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/10/09/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="article-date">
+    <a href="/2020/10/09/Docker%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" class="article-date">
   <time datetime="2020-10-09T06:46:02.000Z" itemprop="datePublished">2020-10-09</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Javascript/">Javascript</a>
+    <a class="article-category-link" href="/categories/Docker/">Docker</a>
   </div>
 
   </div>
@@ -85,7 +85,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      正则表达式
+      Docker基本概念
     </h1>
   
 
@@ -93,30 +93,19 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="匹配模式"><a href="#匹配模式" class="headerlink" title="匹配模式"></a>匹配模式</h2><ul>
-<li><p>横向膜或匹配</p>
-<p>  可匹配字符串长度不固定<br>  使用量词{m,n}：表示连续出现至少m次，至多n次<br>  例：/ab{2,5}c/:表示第一个字符是a，接下来是2~5个字符b，最后是字符c</p>
-  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//g 表示全局匹配</span></span><br><span class="line"><span class="keyword">const</span> regex=<span class="regexp">/ab&#123;2,5&#125;c/g</span>;</span><br><span class="line"><span class="keyword">const</span> str=<span class="string">&quot;abc abbc abbbc abbbbc abbbbbc abbbbbbc&quot;</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str.match(regex))</span><br></pre></td></tr></table></figure>
-<p>  // =&gt; [ ‘abbc’, ‘abbbc’, ‘abbbbc’, ‘abbbbbc’ ]</p>
-</li>
-<li><p>纵向模糊匹配</p>
-<p>  一个匹配的字符串，具体到某一字符时，它可以不是某个确定的字符，可以有多种可能。<br>  使用字符组[abc]:表示该字符可以是a、b、c中的任何一个<br>  例：/a[123]b/: 可以匹配: ‘a1b’,’a2b’,’a3b’</p>
-<pre><code class="javascript">const regex=/a[123]c/g;
-const str=&quot;a1c a2c a3c&quot;;
-console.log(str.match(regex))</code></pre>
-<p>  // =&gt; [ ‘a1c’, ‘a2c’, ‘a3c’ ]</p>
-</li>
-</ul>
-<h2 id="字符组"><a href="#字符组" class="headerlink" title="字符组"></a>字符组</h2><p>[abc]</p>
-<h3 id="范围表示法"><a href="#范围表示法" class="headerlink" title="范围表示法"></a>范围表示法</h3><pre><code>如果字符组里的字符特别多，可以使用范围表达式</code></pre>
+        <h2 id="镜像"><a href="#镜像" class="headerlink" title="镜像"></a>镜像</h2><p>操作系统分内核空间和用户空间，对于 Linux 而言，内核启动后，会挂载 root 文件系统为其提供用户空间支持。而 Docker 镜像（Image），就相当于是一个<br>root 文件系统。</p>
+<p>Docker 镜像是一个特殊的文件系统，除了提供容器运行时所需的程序、库、资源、配置等文件外，还包含了一些为运行时准备的一些配置参数（如匿名卷、环境变量、<br>用户等）。镜像不包含任何动态数据，其内容在构建之后也不会被改变。</p>
+<h3 id="分层存储"><a href="#分层存储" class="headerlink" title="分层存储"></a>分层存储</h3><p>因为镜像包含操作系统完整的 root 文件系统，其体积往往是庞大的，因此在 Docker 设计时，就充分利用 Union FS 的技术，将其设计为分层存储的架构。<br>所以严格来说，镜像并非是像一个 ISO 那样的打包文件，镜像只是一个虚拟的概念，其实际体现并非由一个文件组成，而是由一组文件系统组成，或者说，<br>由多层文件系统联合组成。<br>镜像构建时，会一层层构建，前一层是后一层的基础。每一层构建完就不会再发生改变，后一层上的任何改变只发生在自己这一层。比如，删除前一层文件的操作，<br>实际不是真的删除前一层的文件，而是仅在当前层标记为该文件已删除。在最终容器运行的时候，虽然不会看到这个文件，但是实际上该文件会一直跟随镜像。因此，<br>在构建镜像的时候，需要额外小心，每一层尽量只包含该层需要添加的东西，任何额外的东西应该在该层构建结束前清理掉。</p>
+<h2 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h2><p>镜像（Image）和容器（Container）的关系，就像是面向对象程序设计中的 类 和 实例 一样，镜像是静态的定义，容器是镜像运行时的实体。容器可以被创建、<br>启动、停止、删除、暂停等。<br>容器的实质是进程，但与直接在宿主执行的进程不同，容器进程运行于属于自己的独立的 命名空间。因此容器可以拥有自己的 root 文件系统、自己的网络配置、<br>自己的进程空间，甚至自己的用户 ID 空间。容器内的进程是运行在一个隔离的环境里，使用起来，就好像是在一个独立于宿主的系统下操作一样。这种特性使得容器<br>封装的应用比直接在宿主运行更加安全。也因为这种隔离的特性，很多人初学 Docker 时常常会混淆容器和虚拟机。<br>前面讲过镜像使用的是分层存储，容器也是如此。每一个容器运行时，是以镜像为基础层，在其上创建一个当前容器的存储层，我们可以称这个为容器运行时读写而准<br>备的存储层为 容器存储层。<br>容器存储层的生存周期和容器一样，容器消亡时，容器存储层也随之消亡。因此，任何保存于容器存储层的信息都会随容器删除而丢失。<br>按照 Docker 最佳实践的要求，容器不应该向其存储层内写入任何数据，容器存储层要保持无状态化。所有的文件写入操作，都应该使用 数据卷（Volume）、或<br>者 绑定宿主目录，在这些位置的读写会跳过容器存储层，直接对宿主（或网络存储）发生读写，其性能和稳定性更高。<br>数据卷的生存周期独立于容器，容器消亡，数据卷不会消亡。因此，使用数据卷后，容器删除或者重新运行之后，数据却不会丢失。</p>
+<h2 id="仓库"><a href="#仓库" class="headerlink" title="仓库"></a>仓库</h2><p>镜像构建完成后，可以很容易的在当前宿主机上运行，但是，如果需要在其它服务器上使用这个镜像，我们就需要一个集中的存储、分发镜像的服务，Docker<br>Registry 就是这样的服务。<br>一个 Docker Registry 中可以包含多个 仓库（Repository）；每个仓库可以包含多个 标签（Tag）；每个标签对应一个镜像。<br>通常，一个仓库会包含同一个软件不同版本的镜像，而标签就常用于对应该软件的各个版本。我们可以通过 &lt;仓库名&gt;:&lt;标签&gt; 的格式来指定具体是这个软件<br>哪个版本的镜像。如果不给出标签，将以 latest 作为默认标签。<br>以 Ubuntu 镜像 为例，ubuntu 是仓库的名字，其内包含有不同的版本标签，如，16.04, 18.04。我们可以通过 ubuntu:16.04，或者 ubuntu:18.04<br>来具体指定所需哪个版本的镜像。如果忽略了标签，比如 ubuntu，那将视为 ubuntu:latest。<br>仓库名经常以 两段式路径 形式出现，比如 jwilder/nginx-proxy，前者往往意味着 Docker Registry 多用户环境下的用户名，后者则往往是对应的软件<br>名。但这并非绝对，取决于所使用的具体 Docker Registry 的软件或服务。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://47.100.166.125/2020/10/09/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" data-id="ckhubm3n9000b0hqhfznzf3ya" class="article-share-link">Share</a>
+      <a data-url="http://47.100.166.125/2020/10/09/Docker%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" data-id="ckhubm3mv00000hqh9i475r2e" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%AD%A3%E5%88%99/" rel="tag">正则</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/" rel="tag">docker</a></li></ul>
 
     </footer>
   </div>
@@ -124,19 +113,19 @@ console.log(str.match(regex))</code></pre>
     
 <nav id="article-nav">
   
-    <a href="/2020/10/09/Docker%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/10/10/Kotlin/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          Docker基本概念
+          Kotlin
         
       </div>
     </a>
   
   
-    <a href="/2020/10/09/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B8%AD-heap-%E5%92%8C-stack-%E7%9A%84%E5%8C%BA%E5%88%AB/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2020/10/09/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">操作系统中 heap 和 stack 的区别</div>
+      <div class="article-nav-title">正则表达式</div>
     </a>
   
 </nav>
