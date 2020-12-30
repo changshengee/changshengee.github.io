@@ -64,6 +64,130 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-数据在内存中的存储" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/12/30/%E6%95%B0%E6%8D%AE%E5%9C%A8%E5%86%85%E5%AD%98%E4%B8%AD%E7%9A%84%E5%AD%98%E5%82%A8/" class="article-date">
+  <time datetime="2020-12-30T07:58:02.000Z" itemprop="datePublished">2020-12-30</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/12/30/%E6%95%B0%E6%8D%AE%E5%9C%A8%E5%86%85%E5%AD%98%E4%B8%AD%E7%9A%84%E5%AD%98%E5%82%A8/">数据在内存中的存储(二进制形式存储)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="二进制，是计算机处理数据的基础"><a href="#二进制，是计算机处理数据的基础" class="headerlink" title="二进制，是计算机处理数据的基础"></a>二进制，是计算机处理数据的基础</h2><p>内存条是一个非常精密的部件，包含了上一个电子元器件，它们很小，达到了纳米级别。这些元器件实际上就是电路。电路的电压会变化，要么0V，要么5V。只有这<br>两种电压。5V是通电，用1来表示，0V是断电，用0来表示。所以，一个元器件有两种状态，0和1.<br>我们通过电路来控制这些元器件的通断电，会得到很多0,1的组合。例如8个元器件，有2^8=256种不同组合。给组合赋予定义，则构成了值。</p>
+<p>一般情况下我们不一个一个使用元器件，而是将8个元器件看做一个单位。1表示为0000001；</p>
+<p>一个元器件称为1个比特（bit）,8个元器件称为一字节（byte），以此类推。1024个字节为1kb；。。。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://47.100.166.125/2020/12/30/%E6%95%B0%E6%8D%AE%E5%9C%A8%E5%86%85%E5%AD%98%E4%B8%AD%E7%9A%84%E5%AD%98%E5%82%A8/" data-id="ckjb5ei1p000fzcq7boycb4kt" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c/" rel="tag">c</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-位运算" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/12/10/%E4%BD%8D%E8%BF%90%E7%AE%97/" class="article-date">
+  <time datetime="2020-12-10T09:19:02.000Z" itemprop="datePublished">2020-12-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/12/10/%E4%BD%8D%E8%BF%90%E7%AE%97/">Docker基本概念</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="位逻辑运算符"><a href="#位逻辑运算符" class="headerlink" title="位逻辑运算符"></a>位逻辑运算符</h2><p>&amp;（与）、|（或）、~（非）和 ^（异或）。除了 ~（即位取反）为单目运算符外，其余都为双目运算符</p>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>含义</th>
+<th>实例</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&amp;</td>
+<td>按位进行与运算(AND)</td>
+<td>4 &amp; 5</td>
+<td>4</td>
+</tr>
+<tr>
+<td>&#124;</td>
+<td>按位进行或运算(OR)</td>
+<td>4</td>
+<td>5</td>
+</tr>
+<tr>
+<td>^</td>
+<td>按位进行异或运算(XOR)</td>
+<td>4 ^ 5</td>
+<td>1</td>
+</tr>
+<tr>
+<td>~</td>
+<td>按位进行取反运算(NOT)</td>
+<td>~ 4    -5</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>异或运算有以下三个性质。</p>
+<p>1、任何数和 0 做异或运算，结果仍然是原来的数，即 a ⊕ 0= a。<br>2、任何数和其自身做异或运算，结果是 0，即 a ⊕ a=a。<br>3、异或运算满足交换律和结合律，即 a ⊕ b ⊕ a=b ⊕ a ⊕ a=b ⊕ (a ⊕ a)=b ⊕0=ba⊕b⊕a=b⊕a⊕a=b⊕(a⊕a)=b⊕0=b。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://47.100.166.125/2020/12/10/%E4%BD%8D%E8%BF%90%E7%AE%97/" data-id="ckjb5ei1h0006zcq7ek5egu44" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/" rel="tag">java</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Hystrix-服务容错保护" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/10/22/Hystrix-%E6%9C%8D%E5%8A%A1%E5%AE%B9%E9%94%99%E4%BF%9D%E6%8A%A4/" class="article-date">
@@ -121,11 +245,16 @@
 <li>collapserProperties：请求合并属性，用于控制实例属性，有很多；</li>
 <li>timerDelayInMilliseconds：collapserProperties中的属性，用于控制每隔多少时间合并一次请求；</li>
 </ul>
+<h2 id="Hystrix全局配置"><a href="#Hystrix全局配置" class="headerlink" title="Hystrix全局配置"></a>Hystrix全局配置</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">hystrix:</span><br><span class="line">  command: #用于控制HystrixCommand的行为</span><br><span class="line">    default:</span><br><span class="line">      execution:</span><br><span class="line">        isolation:</span><br><span class="line">          strategy: THREAD #控制HystrixCommand的隔离策略，THREAD-&gt;线程池隔离策略(默认)，SEMAPHORE-&gt;信号量隔离策略</span><br><span class="line">          thread:</span><br><span class="line">            timeoutInMilliseconds: 1000 #配置HystrixCommand执行的超时时间，执行超过该时间会进行服务降级处理</span><br><span class="line">            interruptOnTimeout: true #配置HystrixCommand执行超时的时候是否要中断</span><br><span class="line">            interruptOnCancel: true #配置HystrixCommand执行被取消的时候是否要中断</span><br><span class="line">          timeout:</span><br><span class="line">            enabled: true #配置HystrixCommand的执行是否启用超时时间</span><br><span class="line">          semaphore:</span><br><span class="line">            maxConcurrentRequests: 10 #当使用信号量隔离策略时，用来控制并发量的大小，超过该并发量的请求会被拒绝</span><br><span class="line">      fallback:</span><br><span class="line">        enabled: true #用于控制是否启用服务降级</span><br><span class="line">      circuitBreaker: #用于控制HystrixCircuitBreaker的行为</span><br><span class="line">        enabled: true #用于控制断路器是否跟踪健康状况以及熔断请求</span><br><span class="line">        requestVolumeThreshold: 20 #超过该请求数的请求会被拒绝</span><br><span class="line">        forceOpen: false #强制打开断路器，拒绝所有请求</span><br><span class="line">        forceClosed: false #强制关闭断路器，接收所有请求</span><br><span class="line">      requestCache:</span><br><span class="line">        enabled: true #用于控制是否开启请求缓存</span><br><span class="line">  collapser: #用于控制HystrixCollapser的执行行为</span><br><span class="line">    default:</span><br><span class="line">      maxRequestsInBatch: 100 #控制一次合并请求合并的最大请求数</span><br><span class="line">      timerDelayinMilliseconds: 10 #控制多少毫秒内的请求会被合并成一个</span><br><span class="line">      requestCache:</span><br><span class="line">        enabled: true #控制合并请求是否开启缓存</span><br><span class="line">  threadpool: #用于控制HystrixCommand执行所在线程池的行为</span><br><span class="line">    default:</span><br><span class="line">      coreSize: 10 #线程池的核心线程数</span><br><span class="line">      maximumSize: 10 #线程池的最大线程数，超过该线程数的请求会被拒绝</span><br><span class="line">      maxQueueSize: -1 #用于设置线程池的最大队列大小，-1采用SynchronousQueue，其他正数采用LinkedBlockingQueue</span><br><span class="line">      queueSizeRejectionThreshold: 5 #用于设置线程池队列的拒绝阀值，由于LinkedBlockingQueue不能动态改版大小，使用时需要用该参数来控制线程数</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="实例配置"><a href="#实例配置" class="headerlink" title="实例配置"></a>实例配置</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">hystrix:</span><br><span class="line">  command:</span><br><span class="line">    HystrixComandKey: #将default换成HystrixComrnandKey</span><br><span class="line">      execution:</span><br><span class="line">        isolation:</span><br><span class="line">          strategy: THREAD</span><br><span class="line">  collapser:</span><br><span class="line">    HystrixCollapserKey: #将default换成HystrixCollapserKey</span><br><span class="line">      maxRequestsInBatch: 100</span><br><span class="line">  threadpool:</span><br><span class="line">    HystrixThreadPoolKey: #将default换成HystrixThreadPoolKey</span><br><span class="line">      coreSize: 10</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://47.100.166.125/2020/10/22/Hystrix-%E6%9C%8D%E5%8A%A1%E5%AE%B9%E9%94%99%E4%BF%9D%E6%8A%A4/" data-id="ckhubm3n100010hqh2emy6sv4" class="article-share-link">Share</a>
+      <a data-url="http://47.100.166.125/2020/10/22/Hystrix-%E6%9C%8D%E5%8A%A1%E5%AE%B9%E9%94%99%E4%BF%9D%E6%8A%A4/" data-id="ckjb5ei1b0001zcq70y5d36bc" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hystrix/" rel="tag">hystrix</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spring-cloud/" rel="tag">spring cloud</a></li></ul>
@@ -235,7 +364,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://47.100.166.125/2020/10/10/Kotlin/" data-id="ckhubm3n400040hqhdgo14csu" class="article-share-link">Share</a>
+      <a data-url="http://47.100.166.125/2020/10/10/Kotlin/" data-id="ckjb5ei1f0004zcq70iz380b7" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/" rel="tag">android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/kotlin/" rel="tag">kotlin</a></li></ul>
@@ -282,7 +411,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://47.100.166.125/2020/10/09/Docker%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" data-id="ckhubm3mv00000hqh9i475r2e" class="article-share-link">Share</a>
+      <a data-url="http://47.100.166.125/2020/10/09/Docker%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" data-id="ckjb5ei160000zcq776usfsnn" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/" rel="tag">docker</a></li></ul>
@@ -340,7 +469,7 @@ console.log(str.match(regex))</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://47.100.166.125/2020/10/09/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" data-id="ckhubm3n9000b0hqhfznzf3ya" class="article-share-link">Share</a>
+      <a data-url="http://47.100.166.125/2020/10/09/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" data-id="ckjb5ei1q000gzcq76j7q9for" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%AD%A3%E5%88%99/" rel="tag">正则</a></li></ul>
@@ -391,7 +520,7 @@ console.log(str.match(regex))</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://47.100.166.125/2020/10/09/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B8%AD-heap-%E5%92%8C-stack-%E7%9A%84%E5%8C%BA%E5%88%AB/" data-id="ckhubm3n8000a0hqhay8navmx" class="article-share-link">Share</a>
+      <a data-url="http://47.100.166.125/2020/10/09/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B8%AD-heap-%E5%92%8C-stack-%E7%9A%84%E5%8C%BA%E5%88%AB/" data-id="ckjb5ei1j000bzcq75vu9ezc8" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%A0%86%E6%A0%88/" rel="tag">堆栈</a></li></ul>
@@ -450,7 +579,7 @@ console.log(str.match(regex))</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://47.100.166.125/2020/09/30/%E5%AE%89%E5%8D%93%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" data-id="ckhubm3n600060hqh5c22bp6w" class="article-share-link">Share</a>
+      <a data-url="http://47.100.166.125/2020/09/30/%E5%AE%89%E5%8D%93%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" data-id="ckjb5ei1i000azcq7fpa299fq" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/" rel="tag">android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/kotlin/" rel="tag">kotlin</a></li></ul>
@@ -539,7 +668,7 @@ console.log(str.match(regex))</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://47.100.166.125/2020/09/29/mongo/" data-id="ckhubm3n500050hqhg137e15r" class="article-share-link">Share</a>
+      <a data-url="http://47.100.166.125/2020/09/29/mongo/" data-id="ckjb5ei1g0005zcq7c7bo92lr" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mongo/" rel="tag">mongo</a></li></ul>
@@ -561,7 +690,7 @@ console.log(str.match(regex))</code></pre>
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Docker/">Docker</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/">Javascript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Docker/">Docker</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/">Javascript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a></li></ul>
     </div>
   </div>
 
@@ -571,7 +700,7 @@ console.log(str.match(regex))</code></pre>
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/android/" rel="tag">android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hystrix/" rel="tag">hystrix</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kotlin/" rel="tag">kotlin</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mongo/" rel="tag">mongo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring-cloud/" rel="tag">spring cloud</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A0%86%E6%A0%88/" rel="tag">堆栈</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AD%A3%E5%88%99/" rel="tag">正则</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/android/" rel="tag">android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c/" rel="tag">c</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hystrix/" rel="tag">hystrix</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kotlin/" rel="tag">kotlin</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mongo/" rel="tag">mongo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring-cloud/" rel="tag">spring cloud</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A0%86%E6%A0%88/" rel="tag">堆栈</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AD%A3%E5%88%99/" rel="tag">正则</a></li></ul>
     </div>
   </div>
 
@@ -581,7 +710,7 @@ console.log(str.match(regex))</code></pre>
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/android/" style="font-size: 20px;">android</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/hystrix/" style="font-size: 10px;">hystrix</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/kotlin/" style="font-size: 20px;">kotlin</a> <a href="/tags/mongo/" style="font-size: 10px;">mongo</a> <a href="/tags/spring-cloud/" style="font-size: 10px;">spring cloud</a> <a href="/tags/%E5%A0%86%E6%A0%88/" style="font-size: 10px;">堆栈</a> <a href="/tags/%E6%AD%A3%E5%88%99/" style="font-size: 10px;">正则</a>
+      <a href="/tags/android/" style="font-size: 20px;">android</a> <a href="/tags/c/" style="font-size: 10px;">c</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/hystrix/" style="font-size: 10px;">hystrix</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/kotlin/" style="font-size: 20px;">kotlin</a> <a href="/tags/mongo/" style="font-size: 10px;">mongo</a> <a href="/tags/spring-cloud/" style="font-size: 10px;">spring cloud</a> <a href="/tags/%E5%A0%86%E6%A0%88/" style="font-size: 10px;">堆栈</a> <a href="/tags/%E6%AD%A3%E5%88%99/" style="font-size: 10px;">正则</a>
     </div>
   </div>
 
@@ -590,7 +719,7 @@ console.log(str.match(regex))</code></pre>
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">十月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">九月 2020</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">十二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">十月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">九月 2020</a></li></ul>
     </div>
   </div>
 
@@ -603,6 +732,14 @@ console.log(str.match(regex))</code></pre>
       <ul>
         
           <li>
+            <a href="/2020/12/30/%E6%95%B0%E6%8D%AE%E5%9C%A8%E5%86%85%E5%AD%98%E4%B8%AD%E7%9A%84%E5%AD%98%E5%82%A8/">数据在内存中的存储(二进制形式存储)</a>
+          </li>
+        
+          <li>
+            <a href="/2020/12/10/%E4%BD%8D%E8%BF%90%E7%AE%97/">Docker基本概念</a>
+          </li>
+        
+          <li>
             <a href="/2020/10/22/Hystrix-%E6%9C%8D%E5%8A%A1%E5%AE%B9%E9%94%99%E4%BF%9D%E6%8A%A4/">hystrix 服务容错保护</a>
           </li>
         
@@ -612,14 +749,6 @@ console.log(str.match(regex))</code></pre>
         
           <li>
             <a href="/2020/10/09/Docker%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/">Docker基本概念</a>
-          </li>
-        
-          <li>
-            <a href="/2020/10/09/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式</a>
-          </li>
-        
-          <li>
-            <a href="/2020/10/09/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B8%AD-heap-%E5%92%8C-stack-%E7%9A%84%E5%8C%BA%E5%88%AB/">操作系统中 heap 和 stack 的区别</a>
           </li>
         
       </ul>
