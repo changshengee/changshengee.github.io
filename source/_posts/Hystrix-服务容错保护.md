@@ -4,9 +4,7 @@ date: 2020-10-22 13:28:30
 tags:
 - java
 - spring cloud
-- hystrix
-categories:
-- Java
+categories: java
 ---
 ## 简介
 
