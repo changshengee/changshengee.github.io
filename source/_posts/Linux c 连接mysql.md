@@ -6,7 +6,6 @@ categories:
 - 数据库
 tags:
 - mysql
-- c
 - linux
 --- 
 
