@@ -3,17 +3,31 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: cs
-subtitle: ''
-description: ''
+title: changshengee
+subtitle: '长生笔记'
+description: '长生的个人博客；长生的日常随笔'
 keywords:
+  - note
+  - 博客
+  - 笔记
+  - changsheng
+  - changshengee
+  - cs
+  - notes
+  - 随笔
+  - java
+  - c
+  - c++
+  - linux
+  - redis
+  - 技术
 author: ChangSheng
 language: zh-CN
 timezone: 'Asia/Shanghai'
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://example.com/child' and root as '/child/'
-url: http://47.100.166.125
+url: http://www.changshengee.github.io
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -34,7 +48,7 @@ skip_render:
 # Writing
 new_post_name: :title.md # File name of new posts
 default_layout: post
-titlecase: false # Transform title into titlecase
+titlecase: true # Transform title into titlecase
 external_link:
   enable: true # Open external links in new tab
   field: site # Apply to the whole site
@@ -98,7 +112,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
