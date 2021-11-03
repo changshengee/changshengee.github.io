@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5ed81554-cda0-42fe-a0b6-a051eab314e2" name="Changes" comment=":lipstick: 更新主题" />
+    <list default="true" id="5ed81554-cda0-42fe-a0b6-a051eab314e2" name="Changes" comment=":lipstick: 更新主题">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.json" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,6 +34,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
@@ -54,6 +58,7 @@
       <option name="presentableId" value="Default" />
       <updated>1635907443357</updated>
       <workItem from="1635907444952" duration="14076000" />
+      <workItem from="1635931758275" duration="42000" />
     </task>
     <task id="LOCAL-00001" summary="添加 :construction_worker: 添加 CI 构建到系统">
       <created>1635916893911</created>
@@ -148,9 +153,13 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/themes/light" />
+    </ignored-roots>
     <MESSAGE value="添加 :construction_worker: 添加 CI 构建到系统" />
     <MESSAGE value=":lipstick: 更新主题" />
     <option name="LAST_COMMIT_MESSAGE" value=":lipstick: 更新主题" />
