@@ -5,7 +5,7 @@
 # Site
 title: changshengee
 subtitle: '长生笔记'
-description: '长生的个人博客；长生的日常随笔'
+description: '长生的个人博客'
 keywords:
   - note
   - 博客
@@ -112,7 +112,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: next
+theme: 
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
