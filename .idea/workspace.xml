@@ -8,7 +8,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/themes/light" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -53,7 +53,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1635907443357</updated>
-      <workItem from="1635907444952" duration="13580000" />
+      <workItem from="1635907444952" duration="14076000" />
     </task>
     <task id="LOCAL-00001" summary="添加 :construction_worker: 添加 CI 构建到系统">
       <created>1635916893911</created>
