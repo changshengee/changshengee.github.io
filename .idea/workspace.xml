@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5ed81554-cda0-42fe-a0b6-a051eab314e2" name="Changes" comment="添加 :construction_worker: 添加 CI 构建到系统">
-      <change afterPath="$PROJECT_DIR$/.gitigonre" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/node.js.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/node.js.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/main.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/main.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +54,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1635907443357</updated>
-      <workItem from="1635907444952" duration="4921000" />
+      <workItem from="1635907444952" duration="5276000" />
     </task>
     <task id="LOCAL-00001" summary="添加 :construction_worker: 添加 CI 构建到系统">
       <created>1635916893911</created>
@@ -64,7 +63,21 @@
       <option name="project" value="LOCAL" />
       <updated>1635916893911</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="添加 :construction_worker: 添加 CI 构建到系统">
+      <created>1635917544280</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1635917544280</updated>
+    </task>
+    <task id="LOCAL-00003" summary="添加 :construction_worker: 添加 CI 构建到系统">
+      <created>1635917575209</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1635917575209</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
