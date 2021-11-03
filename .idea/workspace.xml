@@ -53,7 +53,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1635907443357</updated>
-      <workItem from="1635907444952" duration="7639000" />
+      <workItem from="1635907444952" duration="7841000" />
     </task>
     <task id="LOCAL-00001" summary="添加 :construction_worker: 添加 CI 构建到系统">
       <created>1635916893911</created>
@@ -97,7 +97,21 @@
       <option name="project" value="LOCAL" />
       <updated>1635919284693</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="添加 :construction_worker: 添加 CI 构建到系统">
+      <created>1635920219736</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1635920219736</updated>
+    </task>
+    <task id="LOCAL-00008" summary="添加 :construction_worker: 添加 CI 构建到系统">
+      <created>1635920355901</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1635920355901</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
