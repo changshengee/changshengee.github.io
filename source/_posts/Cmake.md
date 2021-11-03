@@ -1,7 +1,7 @@
 ---
 title: Cmake 指令
 date: 2020-01-304 15:58:02
-categories: c/c++
+categories: 工具
 tags: 
 - c/c++
 - linux

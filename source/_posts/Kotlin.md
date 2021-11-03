@@ -1,7 +1,7 @@
 ---
 title: Kotlin
 date: 2020-10-10 14:58:17
-categories: android
+categories: java
 tags: 
 - android
 ---

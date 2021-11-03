@@ -1,7 +1,6 @@
 ---
 title: Linux权限
-categories:
-  - 操作系统
+categories: 操作系统
 tags:
   - linux
 date: 2021-11-03 11:05:09
