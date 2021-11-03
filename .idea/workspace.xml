@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5ed81554-cda0-42fe-a0b6-a051eab314e2" name="Changes" comment="添加 :construction_worker: 添加 CI 构建到系统">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/main.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/main.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +53,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1635907443357</updated>
-      <workItem from="1635907444952" duration="5276000" />
+      <workItem from="1635907444952" duration="6713000" />
     </task>
     <task id="LOCAL-00001" summary="添加 :construction_worker: 添加 CI 构建到系统">
       <created>1635916893911</created>
@@ -77,7 +76,21 @@
       <option name="project" value="LOCAL" />
       <updated>1635917575209</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="添加 :construction_worker: 添加 CI 构建到系统">
+      <created>1635917905288</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1635917905288</updated>
+    </task>
+    <task id="LOCAL-00005" summary="添加 :construction_worker: 添加 CI 构建到系统">
+      <created>1635918663908</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1635918663908</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
