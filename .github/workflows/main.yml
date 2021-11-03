@@ -13,21 +13,15 @@ jobs:
     runs-on: ubuntu-latest # 跑workflow的服务器系统
     steps: # job的一系列动作
       # 切换分支获取源码
-      - name: Checkout # step的名称，将会在 github action 的控制台中显示
-        # 选择一个action，可以理解为若干 steps.run，有利于代码复用
-        uses: actions/checkout@master
-      # 安装使用 node:10
-      - name: use Node.js 10
-        uses: actions/setup-node@v1
-        with:
-          node-version: 10
-      # 运行命令，npm install && npm run build
-      - name: npm install and build
-        run: |
-          npm install
-          npm run build
-        env:
-          CI: true
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install Dependencies
+        run: yarn
+
+      - name: Build
+        run: yarn build
+
       # 部署到腾讯云服务器
       # 利用action把build好的文件上传到服务器/var/www/react-app路径下,需要确认此目录已在服务端创建
       - name: deploy file to server
@@ -36,6 +30,6 @@ jobs:
           username: ${{ secrets.SSH_USER }}   #ssh user name
           server: ${{ secrets.SERVER_IP }} #引用之前创建好的secret
           ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }} #引用之前创建好的secret
-          local_path: './target/*'  # 对应我们项目build的文件夹路径
-          remote_path: '/'
+          local_path: './public/*'  # 对应我们项目build的文件夹路径
+          remote_path: '/home/git/note/'
 
