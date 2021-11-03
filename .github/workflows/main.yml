@@ -1,35 +1,47 @@
-# 一个workflow，名为deploy to tengxunyun
-name: deploy notes
+# deploy.yml
+name: deploy blog to aliyun
 on:
   push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
-
-# 一个 CI/CD 的工作流有许多 jobs 组成，比如最典型的 job 是 lint，test，build。
+    branches:
+      - master
 jobs:
-  build: # 构建job
-    environment: tx
-    runs-on: ubuntu-latest # 跑workflow的服务器系统
-    steps: # job的一系列动作
-      # 切换分支获取源码
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # 切换分支
       - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Install Dependencies
-        run: yarn
-
-      - name: Build
-        run: yarn build
-
-      # 部署到腾讯云服务器
-      # 利用action把build好的文件上传到服务器/var/www/react-app路径下,需要确认此目录已在服务端创建
-      - name: deploy file to server
-        uses: wlixcc/SFTP-Deploy-Action@v1.0
+        uses: actions/checkout@master
+      # 下载 git submodule
+      - uses: srt32/git-actions@v0.0.3
         with:
-          username: ${{ secrets.SSH_USER }}   #ssh user name
-          server: ${{ secrets.SERVER_IP }} #引用之前创建好的secret
-          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }} #引用之前创建好的secret
-          local_path: './public/*'  # 对应我们项目build的文件夹路径
-          remote_path: '/home/git/note/'
+          args: git submodule update --init --recursive
+      # 使用 node:10
+      - name: use Node.js 10
+        uses: actions/setup-node@v1
+        with:
+          node-version: 10
+      # npm install
+      - name: npm install
+        run: |
+          npm install -g hexo-cli
+          npm install
+        env:
+          CI: true
+      # build
+      - name: hexo build
+        run: |
+          hexo clean
+          hexo generate
+        env:
+          CI: true
 
+      # Deploy
+      - name: Deploy
+        uses: easingthemes/ssh-deploy@v2.0.7
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.ACCESS_TOKEN }}
+          ARGS: "-avz --delete"
+          SOURCE: "public/"
+          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+          REMOTE_USER: ${{ secrets.REMOTE_USER }}
+          TARGET: ${{ secrets.TARGET }}
